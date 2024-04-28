@@ -1,6 +1,5 @@
 package com.gyzer.legendaryrealms.Utils;
 
-import dev.lone.itemsadder.api.FontImages.FontImageWrapper;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -59,6 +58,6 @@ public class RunUtils {
     }
 
     private String dealMsg(String str){
-        return FontImageWrapper.replaceFontImages(MsgUtils.msg(str));
+        return MsgUtils.msg(str);
     }
 }

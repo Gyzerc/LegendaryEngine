@@ -4,7 +4,6 @@ import com.gyzer.legendaryrealms.FileConguration.FileProvider;
 import com.gyzer.legendaryrealms.LegendaryPlugin;
 import com.gyzer.legendaryrealms.Utils.ItemUtils;
 import com.gyzer.legendaryrealms.Utils.MsgUtils;
-import dev.lone.itemsadder.api.CustomStack;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.inventory.ItemStack;
@@ -58,12 +57,7 @@ public abstract class MenuLoader extends FileProvider {
                 int model = sec.getInt(key+".model",0);
                 List<String> lore = MsgUtils.msg(sec.getStringList(key+".lore"));
                 String fuction = sec.getString(key+".fuction","none");
-                String ia = sec.getString(key+".itemsadder");
-
                 ItemStack i = new ItemStack(material,amount,(short) data);
-                if (ia != null) {
-                    i = CustomStack.getInstance(ia).getItemStack().clone();
-                }
                 ItemMeta id = i.getItemMeta();
                 id.setDisplayName(display);
                 id.setLore(lore);
